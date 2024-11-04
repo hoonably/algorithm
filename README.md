@@ -25,7 +25,6 @@
 <br>
 
 ## Teamnotes
-- 2024-10 / ICPC / WhereIsWoongJae / with Kim Hyunseo, Bang Jaehyun
-
+- 2024-10 / ICPC 2024 / WhereIsWoongJae / with 김현서, 방재현
 
 
