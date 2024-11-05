@@ -1,9 +1,10 @@
 #include <bits/stdc++.h>
+using namespace std;
 
 // 강한 연결 요소 (SCC) Strongly Connected Component
 // 타잔 알고리즘(Tarjan's Algorithm) 
 // O(V+E)
-const int MAXN = 1001;
+const int MAXN = 101;
 struct SCC{
     int sccSize;
     int id;  // 부모값을 초기화 하는 변수
@@ -28,14 +29,15 @@ struct SCC{
 
         // 부모 노드가 자신인 경우 (사이클인 경우)
         if (parent == d[x]){
+            vector<int> scc;
             while(true){
                 int t = stk.top();
                 stk.pop();
-                SCCID[t] = sccSize;  // 그룹 번호 저장
-                finished[t] = true;  // 처리 완료 표시
+                scc.push_back(t);
+                finished[t] = true;
                 if (t==x) break;
             }
-            sccSize++;
+            SCC.push_back(scc);
         }
         return parent;  // 자신의 부모 값을 반환
     }
@@ -52,7 +54,7 @@ struct SCC{
                     indegree[SCCID[nxt]]++;  
     }  // 그 후 진입차수가 0인 SCC를 이용해서 문제를 풀면 됨.
 
-    void init(int N){
+    void init(int N){  // 필수
         memset(d, -1, sizeof(d));
         /* for test case
         id = 0;
@@ -63,6 +65,4 @@ struct SCC{
         */
     }
 }scc;
-
-
 
