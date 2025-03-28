@@ -139,23 +139,19 @@
    - Efficient prefix sum structure.
    - Smaller, simpler than segment tree for point updates.
 
-3. **Segment Tree**
-   - Supports range query + update.
-   - Can be extended with lazy propagation.
-
-4. **Monotonic Queue**
+3. **Monotonic Queue**
    - Maintains min/max in a sliding window.
    - Used in optimization problems.
 
-5. **Sliding Window**
+4. **Sliding Window**
    - Fixed or dynamic window for array/string traversal.
    - Used in substring, sum problems.
 
-6. **Mo's Algorithm**
+5. **Mo's Algorithm**
    - Offline query optimization on arrays.
    - √N decomposition + sorting trick.
 
-7. **Two Pointer**
+6. **Two Pointer**
    - Linear scan technique using two indices.
    - Used in subarray, pair sum problems.
 
