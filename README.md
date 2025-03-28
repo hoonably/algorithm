@@ -171,9 +171,14 @@
    - 0/1 Knapsack DP with value and weight.
    - Used in resource optimization problems.
 
-3. **Coordinate Compression**
+3. **Binary Search (이분 탐색)**
+   - Finds min/max value satisfying a condition.
+   - Often combined with Greedy, DP, or Simulation.
+
+4. **Coordinate Compression**
    - Compresses large coordinate ranges to small indices.
    - Used with segment trees, BIT, etc.
+
 
 ---
 
