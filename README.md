@@ -167,7 +167,11 @@
    - Encodes visited or chosen states as bitmask.
    - Used in TSP, subset DP.
 
-2. **Coordinate Compression**
+2. **Knapsack (배낭 문제)**
+   - 0/1 Knapsack DP with value and weight.
+   - Used in resource optimization problems.
+
+3. **Coordinate Compression**
    - Compresses large coordinate ranges to small indices.
    - Used with segment trees, BIT, etc.
 
