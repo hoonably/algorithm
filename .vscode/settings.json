@@ -1,15 +1,13 @@
 {
     "code-runner.executorMap": {
         "javascript": "node",
-        "java": "cd $dir && javac \"$fileName\" && java \"./tempCodeRunnerFile\"",
-        "c": "cd $dir && gcc \"$fileName\" -o \"tempCodeRunnerFile\" && ./\"tempCodeRunnerFile\"",
-        "cpp": "cd $dir && clang++ -std=c++17 \"$fileName\" -o \"tempCodeRunnerFile\" && ./\"tempCodeRunnerFile\" && rm \"tempCodeRunnerFile\"",
-            // 경로에 들어가고,  g++로 c++17버전으로 컴파일해 실행 파일 생성,  실행 파일 열기  , 실행파일 삭제
 
-        // "python3" 명령어를 "python"으로 바꿔준 경우 사용 가능 (원래는 python3)
-        // 터미널에서 vi ~/.zshrc 로 들어간 후
-        // alias python="python3"
-        // 라는 한 줄을 추가하면 앞으로 python을 입력하면 python3 효과가 나온다.
+        // 실행 파일 무조건 안전하게 삭제
+        // trap "rm -f ..." EXIT;는 스크립트가 정상 종료되든 중단(ctrl+c 같은 작업)되든 간에 EXIT 시그널에 의해 실행됨
+        "java": "cd $dir && javac \"$fileName\" -d . && (trap 'rm -f tempCodeRunnerFile.class' EXIT; java tempCodeRunnerFile)",
+        "c": "cd $dir && gcc \"$fileName\" -o tempCodeRunnerFile && (trap 'rm -f tempCodeRunnerFile' EXIT; ./tempCodeRunnerFile)",
+        "cpp": "cd $dir && clang++ -std=c++17 \"$fileName\" -o tempCodeRunnerFile && (trap 'rm -f tempCodeRunnerFile' EXIT; ./tempCodeRunnerFile)",
+
         "python": "python3",
         "ruby": "ruby",
         "spim": "spim -file \"$fileName\""
